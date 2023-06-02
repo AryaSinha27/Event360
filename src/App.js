@@ -1,27 +1,72 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import Header from "./Header";
 import Home from "./Home";
-import { BrowserRouter as Router, Switch, Route ,useHistory } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route  } from "react-router-dom";
 import Checkout from "./Checkout";
 import Login from "./Login";
+import { auth } from "./firebase";
+import { useStateValue } from "./StateProvider";
+import Payment from "./Payment";
+import Orders from "./Orders";
+import {loadStripe} from "@stripe/stripe-js"
+import {Elements} from "@stripe/react-stripe-js"
+
+
+
+const promise = loadStripe(
+  "pk_test_51NDPN3SEBmGjpz0240xtS4otsOgtkthY3v59UlYOoawwTVxDg1Wkxi4Rybu2LXYHaTKpQ0FroedHMHM6WdSQEAQZ00W6zkOnjx"
+  );
+
 
 function App() {
-  const history = useHistory();
-  function delayAndGo(e) {
-    e.preventDefault();
-    setTimeout(() => history.push("/checkout"), 1000);
-  }
+  const [{}, dispatch] = useStateValue();
+ useEffect(() => {
+  //willcrun once when the app component load
+   auth.onAuthStateChanged((authUser) => {
+    console.log('THE USER IS >>>', authUser);
+
+    if (authUser){
+      //the user just logged in / the user was logged in
+      dispatch({
+        type: 'SET_USER',
+        user: authUser
+      })
+    } else{
+      //the user is logged out
+      dispatch({
+        type: 'SET_USER',
+        user: null
+      })
+    }
+   })
+ }, [])
+ 
+
+
+
   return (
     <Router>
       <div className="app">
         <Switch>
+          <Route path="/orders">
+          <Header />
+
+            <Orders />
+          </Route>
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/checkout"  onClick={delayAndGo}>
+          <Route path="/checkout"  >  
             <Header />
             <Checkout />
+          </Route>
+
+          <Route path="/payment"  >  
+            <Header />
+            <Elements stripe={promise}>
+             <Payment/>
+             </Elements>
           </Route>
 
           <Route path="/">
