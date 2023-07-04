@@ -1,6 +1,6 @@
 import React from "react";
-import "./Header.css";
-import REACTLOGO from "./header_logo.png";
+// import "./Header.css";
+// import REACTLOGO from "./header_logo.png";
 // import SearchIcon from '@material-ui/icons/Search'
 // import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { Link } from "react-router-dom";
@@ -21,53 +21,56 @@ const Header = () => {
   //   }, 1000);
 
   return (
-    <div className="header"  >
-      <Link to="/" >
-        <img className="header_logo" src={REACTLOGO} alt="" />
-      </Link>
+    <>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+  <Link className="navbar-brand" to="/">
+    Event 360
+    </Link>
 
-      <div className="header_search">
-        <input className="header_searchInput" type="text" />
-        {/* 
-        < SearchIcon
-            className='header_searchIcon'/>  */}
-      </div>
+  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span className="navbar-toggler-icon"></span>
+  </button>
 
-      <div className="header_nav">
-        <Link to={!user && '/login'}>
-          <div onClick={handleAuthentication}
-          className="header_option">
-            <span className="header_optionLineOne">Hello {!user ? 'Guest' : user.email}</span>
-            <span className="header_optionLineTwo">{user ? 'Sign Out'
-            : 'Sign In'}</span>
-          </div>
-        </Link>
+  <div className="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul className="navbar-nav ml-auto">
+      <li className="nav-item active">
+        <Link className="nav-link" to="/home">Home </Link>
+      </li>
 
-        <Link  to='/orders'>
-         <div className="header_option">
-           <span className="header_optionLineOne">Returns</span>
-           <span className="header_optionLineTwo">&orders</span>
-         </div>
-        </Link>
+      <li className="nav-item">
+        <Link className="nav-link" to="/tent">Tent Booking</Link>
+      </li>
 
-        
+      <li className="nav-item">
+        <Link className="nav-link" to="/stage">Stage Production</Link>
+      </li>
 
-        <div className="header_option">
-          <span className="header_optionLineOne">Your</span>
-          <span className="header_optionLineTwo">Prime</span>
-        </div>
+      <li className="nav-item">
+        <Link className="nav-link" to="/cars">Cars Booking</Link>
+      </li>
 
-        {/* option of basket */}
-        <Link to="/checkout">
-          <div className="header_optionBasket">
+      <li className="nav-item">
+        <Link className="nav-link" to="/decoration">Decoration</Link>
+      </li>
+
+      <li className="nav-item">
+        <Link className="nav-link" to="/login">Login</Link>
+      </li>
+
+      <Link to="/checkout">
+          <div className="nav-item">
             {/* <ShoppingBasketIcon/> */}
-            <span className="header_optionLineTwo header_basketCount">
-              {basket?.length}
+            <span className="nav-link">
+              {basket?.length} 
             </span>
           </div>
         </Link>
-      </div>
-    </div>
+      
+    </ul>
+
+  </div>
+</nav>
+    </>
   );
 };
 

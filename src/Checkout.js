@@ -11,7 +11,7 @@ function Checkout() {
       <div className="checkout_left">
         <img
           className="checkout_ad"
-          src="https://images-eu.ssl-images-amazon.com/images/G/31/CookwareDining/Gateway/DC/water_bottles_lunch_boxes_BVD_PC_May-revised-3000x1200._CB589055078_.jpg"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO0LrvsThp066u4FcnyEH1MR-xRdw6tad5Wg&usqp=CAU"
           alt=""
         />
 

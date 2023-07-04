@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./App.css";
+// import "./App.css";
 import Header from "./Header";
 import Home from "./Home";
 import { BrowserRouter as Router, Switch, Route  } from "react-router-dom";
@@ -11,6 +11,10 @@ import Payment from "./Payment";
 import Orders from "./Orders";
 import {loadStripe} from "@stripe/stripe-js"
 import {Elements} from "@stripe/react-stripe-js"
+import Cars from "./Cars";
+import Footer from "./Footer";
+import Tent from "./Tent";
+import Stage from "./Stage";
 
 
 
@@ -69,10 +73,43 @@ function App() {
              </Elements>
           </Route>
 
-          <Route path="/">
-            <Header />
-            <Home />
-          </Route>
+          <Route exact path='/'>
+           <Header/> 
+           <Home />
+           <Tent/>
+           <Stage/>
+           <Cars/>
+           {/* <Decoration/> */}
+           <Footer/>
+
+           </Route>
+
+        <Route path='/home'>
+        <Header/> 
+        <Home />
+        {/* <Form/> */}
+        </Route>
+
+        <Route path='/tent'>
+        <Header/> 
+        <Tent/>
+        {/* <Form/> */}
+        <Footer/>
+        </Route>
+
+        <Route path='/stage'>
+        <Header/> 
+        <Stage/>
+        {/* <Form/> */}
+        <Footer/>
+        </Route>
+
+        <Route path='/cars'>
+        <Header/> 
+        <Cars/>
+        {/* <Form/> */}
+        <Footer/>
+        </Route>
         </Switch>
       </div>
     </Router>
