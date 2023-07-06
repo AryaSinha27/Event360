@@ -1,9 +1,11 @@
+
 .home{
+    background-image: url(/src/image/images5.jpg);
     display: flex;
     justify-content:center ;
-    /* margin-left: auto;
+    margin-left: auto;
     margin-right: auto;
-    max-width: 1500px; */
+    max-width: 1500px;
     align-items: center;
 }
 

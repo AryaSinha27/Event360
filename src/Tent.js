@@ -4,6 +4,7 @@ import Product from './Product'
 
 function Tent() {
   return (
+   
     <div className='tent'>
       <div className='tent_container'>
         <img 
@@ -51,8 +52,46 @@ function Tent() {
           rating={5}
           />
         </div>
+        
+        <div className="tent_row">
+          <Product
+          id= "4"
+          title='DEVKI INTERIghjhg'
+          price={3456}
+          image= 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYIo6c3sh0y9UXWn5nuY6QtH5EhbFZO35gmz1AGNL33285r6zdoyJe2dEgZd30KgSGmTE&usqp=CAU'
+          rating={5}
+          
+          />
+        <div id="carouselExampleIndicators" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqSi-u4tRUk3T18YATOa0HR_FdFZOlViWneQ&usqp=CAU" className="d-block w-100" alt="..."/>
+    </div>
+    <div class="carousel-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSONRzcOEH15miwRP388VRAuE1mvCcSes93EA&usqp=CAU" className="d-block w-100" alt="..."/>
+    </div>
+    <div class="carousel-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAXRCt4SJavxN1l4EUG_q2ErEQ82jo8izYxA&usqp=CAU" className="d-block w-100" alt="..."/>
+    </div>
+  </div>
+  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Previous</span>
+  </button>
+  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Next</span>
+  </button>
+</div>
+        </div>
       </div>
     </div>
+     
   )
 }
 

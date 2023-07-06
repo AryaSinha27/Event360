@@ -1,6 +1,6 @@
 import React from "react";
-// import "./Header.css";
-// import REACTLOGO from "./header_logo.png";
+import "./Header.css";
+// import REACTLOGO from "./https://icarians.net/upload/client/1006074620210722event%201.jpg";
 // import SearchIcon from '@material-ui/icons/Search'
 // import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { Link } from "react-router-dom";
@@ -23,8 +23,10 @@ const Header = () => {
   return (
     <>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-  <Link className="navbar-brand" to="/">
-    Event 360
+  <Link className="navbar-brand active" to="/">
+    {/* Event 360 */}
+    <img className="header_logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf6NiC0N54IMA0HXPZxaVlExGWLtLPuQUaHQ&usqp=CAU" alt="" />
+    
     </Link>
 
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +35,7 @@ const Header = () => {
 
   <div className="collapse navbar-collapse" id="navbarSupportedContent">
     <ul className="navbar-nav ml-auto">
-      <li className="nav-item active">
+      <li className="nav-item ">
         <Link className="nav-link" to="/home">Home </Link>
       </li>
 
@@ -54,7 +56,14 @@ const Header = () => {
       </li>
 
       <li className="nav-item">
-        <Link className="nav-link" to="/login">Login</Link>
+      <Link to={!user && '/login'}>
+          <div onClick={handleAuthentication}
+          className="header_option">
+            <span className="header_optionLineOne">Hello {!user ? 'Guest' : user.email}</span>
+            <span className="header_optionLineTwo">{user ? 'Sign Out'
+            : 'Sign In'}</span>
+          </div>
+        </Link>
       </li>
 
       <Link to="/checkout">
