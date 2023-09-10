@@ -55,9 +55,9 @@ function Tent() {
         
         <div className="tent_row">
           <Product
-          id= "4"
+          id= "5"
           title='DEVKI INTERIghjhg'
-          price={3456}
+          price={9676}
           image= 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYIo6c3sh0y9UXWn5nuY6QtH5EhbFZO35gmz1AGNL33285r6zdoyJe2dEgZd30KgSGmTE&usqp=CAU'
           rating={5}
           
@@ -81,11 +81,11 @@ function Tent() {
   </div>
   <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
     <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span className="visually-hidden">Previous</span>
+    {/* <span className="visually-hidden">Previous</span> */}
   </button>
   <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
     <span className="carousel-control-next-icon" aria-hidden="true"></span>
-    <span className="visually-hidden">Next</span>
+    {/* <span className="visually-hidden">Next</span> */}
   </button>
 </div>
         </div>

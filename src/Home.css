@@ -35,17 +35,17 @@ span{
 .social_media a{
     display: inline-flex;
     justify-content: center ;
-    align-items: center;
+    /* align-items: center; */
     width: 4rem;
     height: 4rem;
     background: transparent;
-    border: .2rem solid var black;
+    border: .2rem solid var rgb(243, 231, 231);
     border-radius: 50%;
     font-size: 2rem;
-    color: black;
+    color: rgb(227, 213, 213);
     margin: 3rem 1.5rem 3rem 0;
     transition: .5s ease;
-    background-color: rgb(57, 41, 21);
+    background-color: rgb(233, 229, 224);
 
 }
 .social_media a:hover{

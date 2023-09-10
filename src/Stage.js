@@ -1,5 +1,5 @@
 import React from "react";
-// import { Carousel } from "bootstrap";
+import { Carousel } from "bootstrap";
 
 function Stage() {
   return (
@@ -15,7 +15,7 @@ function Stage() {
           </div>
           <div class="carousel-item">
             <img
-              src="https://imgd.aeplcdn.com/1056x594/n/cw/ec/44686/activa-6g-right-front-three-quarter.jpeg?q=75"
+              src=""
               class="d-block w-100"
               alt="..."
             />
